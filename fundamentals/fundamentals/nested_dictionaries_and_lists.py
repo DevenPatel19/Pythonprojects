@@ -106,10 +106,13 @@ dojo = {
    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
 def printInfo(some_dict):
-    for key in some_dict.keys():
-        print(f"{len(some_dict[key])} {key}")
-        for val in some_dict.values():
-            print(val)
+    print(len(some_dict['locations']), "LOCATIONS")
+    for location in some_dict['locations']:
+        print(location)
+    print()
+    print(len(some_dict['instructors']), "INSTRUCTORS")
+    for instructor in some_dict['instructors']:
+       print(instructor)
 
 
 
