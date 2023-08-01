@@ -2,8 +2,8 @@ class User:
     def __init__(self, name, email):
         self.name = name
         self.email = email
-        self.checking = BankAccount(int_rate=0.02, balance=0)	# added this line
-        self.saving = BankAccount(int_rate=0.03, balance=50)	# added this line
+        self.account = BankAccount(int_rate=0.02, balance=0)	# added this line
+        
 
 
 class BankAccount:
@@ -29,7 +29,7 @@ class BankAccount:
         return self
 
     def account_balance(self):
-        print(f"{} Account Balance: ${self.balance}")
+        print(f"Account Balance: ${self.balance}")
         return self
 
     def yield_interest(self):
@@ -42,7 +42,7 @@ class BankAccount:
 user1 = User("u1","one@gmail.com")
 user2 = User("u2","two@gmail.com")
 
-user1.checking.account_balance()
-user1.saving.account_balance()
+user1.account.account_balance()
+user2.account.account_balance()
 
 
