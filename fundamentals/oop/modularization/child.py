@@ -1,1 +1,2 @@
-from modularization import parent
+import parent
+print("Working dir:", parent.getcwd())
