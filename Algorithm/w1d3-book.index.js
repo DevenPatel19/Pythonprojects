@@ -25,30 +25,34 @@ const expected3 = "1-3, 7, 9, 15-17";
  *    page ranges.
  */
 function bookIndex(nums) {
-    var newStr = "";
-    
+    var newStr = '';
     for (let i = 0; i < nums.length; i++) {
-        if (nums[i + 1] - nums[i] != 1) {
+        if (nums[i+1] - nums[i] != 1){
             newStr += nums[i];
-        } else {
-            var temparr = []
-            var j = i
-            while (nums[j + 1] - nums[j] == 1) {
-                temparr.push(nums[j]);
-                j++;
+            if (i < nums.length - 1){
+                newStr += ', '
             }
-            newStr += temparr[0];
-            newStr += "-";
-            newStr += temparr[temparr.length - 1];
         }
+        else {
+            var start = nums[i];
+            var end = 0;
+            while (nums[i+1] - nums[i] === 1){
+                end = nums[i+1];
+                i++
+            }
+            newStr += start + '-' + end 
+            if (i < nums.length - 1){
+                newStr += ', '
+            }
+        }
+        
     }
-    return newStr;
+    return newStr
 }
 
-
-console.log(bookIndex(nums1));
-console.log(bookIndex(nums2));
-console.log(bookIndex(nums3));
+console.log(bookIndex(nums1))
+console.log(bookIndex(nums2))
+console.log(bookIndex(nums3))
 
 
 // const nums1 = [1, 13, 14, 15, 37, 38, 70];

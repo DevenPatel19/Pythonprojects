@@ -1,3 +1,1 @@
-from parent import square
-
-square(4)
+from modularization import parent
