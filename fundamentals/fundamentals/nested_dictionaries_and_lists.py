@@ -57,7 +57,7 @@ def iterateDictionary(key_name,some_list):
 # iterateDictionary('first_name',students) 
 
 
-# iterateDictionary('last_name', students)
+iterateDictionary('last_name', students)
 
 # 3) Get Values From a List of Dictionaries 
 # Create a function iterateDictionary2(key_name, some_list) that, given a list of 
@@ -116,7 +116,7 @@ def printInfo(some_dict):
 
 
 
-printInfo(dojo)
+# printInfo(dojo)
 # output:
 # 7 LOCATIONS
 # San Jose
