@@ -1,4 +1,5 @@
 
+// Encode String
 
 const str1 = "aaaabbcddd";
 const expected1 = "a4b2c1d3";

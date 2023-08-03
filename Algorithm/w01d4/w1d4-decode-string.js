@@ -1,6 +1,6 @@
-/* 
-  String Decode  
-*/
+ 
+  // String Decode  
+
 
 const str1 = "a3b2c1d3";
 const expected1 = "aaabbcddd";
