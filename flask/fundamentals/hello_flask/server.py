@@ -10,6 +10,11 @@ def hello_world():
 def success():
     return 'Success'
 
+# Here the second parameter is cast into an integer before being passed to the function
+@app.route('/hello/<name>/<int:num>') 
+def hello(name, num):
+    return f"Hello, {name * num}"
+
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
 
