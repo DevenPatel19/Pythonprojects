@@ -31,10 +31,10 @@ const expected4 = 1;
  */
 function oddOccurrencesInArray(nums) {
     var table =  makeFrequencyTable(nums)
-    for (nums in table){
+    for (var numskey in table){
     // for (var i = 0; i < table.length; i++) {
-        if (table[nums]  % 2 == 1){
-            return nums
+        if (table[numskey]  % 2 == 1){
+            return numskey
         }
     }
 }
