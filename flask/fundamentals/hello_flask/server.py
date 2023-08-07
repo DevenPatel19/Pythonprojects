@@ -2,17 +2,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# A URL consists of two parts:
-# The domain, and the path
-# http://localhost:5000 - domain
-# anything after the domain is the path (route)
 
 
 @app.route("/")
 def index():
     """This is the root route."""
 
-    name = "Narciso"
+    name = "Deven"
 
     return render_template("index.html", banana=name)
 
@@ -24,7 +20,7 @@ def greet_person(person):
     passed into the URL.
     """
 
-    return render_template("index.html", banana=person)
+    return render_template("index.html", person=person)
 
 
 @app.route("/<time_of_day>/<person>")
@@ -63,6 +59,19 @@ def page_not_found(error):
     """Page not found custom error template."""
 
     return render_template("error.html", error=error)
+
+
+@app.route('/lists')
+def render_lists():
+    # Soon enough, we'll get data from a database, but for now, we're hard coding data
+    student_info = [
+       {'name' : 'Michael', 'age' : 35},
+       {'name' : 'John', 'age' : 30 },
+       {'name' : 'Mark', 'age' : 25},
+       {'name' : 'KB', 'age' : 27}
+    ]
+    return render_template("lists.html", random_numbers = [3,1,5], students = student_info)
+
 
 
 if __name__ == "__main__":

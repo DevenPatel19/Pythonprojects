@@ -11,13 +11,23 @@
     />
     <title>Templating Document</title>
   </head>
+
   <body>
     <div class="container">
-        <h1>Hello Flask!</h1>
-        <h2> Hello {{ name }}! - name is static</h2>
-        <h2> Hello {{ banana }}! - name is Dynamic</h2>
+      <h1>Random Numbers</h1>
+      {% for number in random_numbers %}
+      <p>{{ number }}</p>
+      {% endfor %}
+      <h1>Students</h1>
+      {% for student in students %}
+      <p>{{ student['name'] }} - {{ student['age'] }}</p>
+      {% endfor %}
     </div>
 
-    
+    <div class="container">
+      <h1>Hello Flask!</h1>
+      <h2>Hello {{ banana }}! - name is static</h2>
+      <h2>Hello {{ name }}! - name is Dynamic</h2>
+    </div>
   </body>
 </html>
