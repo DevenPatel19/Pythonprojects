@@ -14,7 +14,7 @@ def index():
 
 @app.route("/count")
 def count():
-    # session["count"] += 1
+    # session["count"] + = 1
     return redirect("/")
 
 
