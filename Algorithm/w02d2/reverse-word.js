@@ -25,20 +25,16 @@ const expected3 = "cba fed ihg";
 
 function reverseString(str) {
     // Create a new variable to store the reversed string
+    var newStr = '';
+    var wordArr = str.split(" ")
 
-    let reversedString = ''
-    // Write a for loop starting at the end of the input string
-    
-    for (let i = str.length - 1; i >= 0; i--) {
-      // Each time the loop runs, add the letter at the index of
-      // the input string to our variable reversedString
-      reversedString += str[i]
-    
+    for (const word of wordArr){
+      let revWord = reverse(word);
+      newStr += revWord
+      newStr += " "
     }
-    // return the reversed string as the answer
-    return reversedString
+  return newStr.slice(0,newstr.length-1)
   }
-
 console.log(reverseString(str1))
 console.log(reverseString(str2))
 console.log(reverseString(str3))
