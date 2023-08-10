@@ -1,0 +1,43 @@
+SET SQL_SAFE_UPDATES = 0;
+
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('1', 'dallas');
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('2', 'seattle');
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('3', 'san jose');
+
+DELETE FROM `dojos_and_ninjas`.`dojos` WHERE (`id` = '1');
+DELETE FROM `dojos_and_ninjas`.`dojos` WHERE (`id` = '2');
+DELETE FROM `dojos_and_ninjas`.`dojos` WHERE (`id` = '3');
+
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('1', 'Konohagakure');
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('2', 'Sunagakure');
+INSERT INTO `dojos_and_ninjas`.`dojos` (`id`, `name`) VALUES ('3', 'Kirigakure');
+
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `dojo_id`) VALUES ('1', 'Hashirama', 'Senju', '1');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `dojo_id`) VALUES ('2', 'Tobiramam', 'Senju', '1');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `dojo_id`) VALUES ('3', 'Hiruzen', 'Sarutobi', '1');
+
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `dojo_id`) VALUES ('4', 'Gaara', 'deldesert', '2');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`first_name`, `last_name`, `dojo_id`) VALUES ('Rasa', 'dedesert', '2');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`first_name`, `last_name`, `dojo_id`) VALUES ('Shamon', 'deldesert', '2');
+
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`first_name`, `last_name`, `dojo_id`) VALUES ('Mei', 'Terumi', '3');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`first_name`, `last_name`, `dojo_id`) VALUES ('Yagura', 'Karatachi', '3');
+INSERT INTO `dojos_and_ninjas`.`ninjas` (`first_name`, `last_name`, `dojo_id`) VALUES ('Gengetsu', 'Hozuki', '3');
+
+SELECT * 
+FROM ninjas
+WHERE dojo_id = 1;
+
+SELECT * 
+FROM ninjas
+WHERE dojo_id = 3;
+
+SELECT * 
+FROM dojos 
+JOIN ninjas ON dojos.id = ninjas.dojo_id 
+WHERE ninjas.id = 6;
+
+SELECT *
+FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id;
+
