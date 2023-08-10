@@ -38,5 +38,8 @@ function isRotation(s1, s2) {
 
 
 console.log(isRotation(strA1, strB1));
+console.log("expected: " + expected1)
 console.log(isRotation(strA2, strB2));
+console.log("expected: " + expected2)
 console.log(isRotation(strA3, strB3));
+console.log("expected: " + expected3)
