@@ -38,27 +38,29 @@ to the original position.
  *    right.
  * @returns {string} The string rotated by the given amount.
  */
-function rotateStr(str, amnt) { if (amnt === 0) {
+function rotateStr(str, amnt) {
+  if (amnt === 0) {
     return str;
   }
 
   const len = str.length;
-  amnt = amnt % len; // Handle cases where amnt is larger than str length
+  let amount = amnt % len; // Handle cases where amnt is larger than str length
 
   // Split the string into two parts based on rotation amount
-  const firstPart = str.slice(0, len - amnt);
-  const secondPart = str.slice(len - amnt);
+  const firstPart = str.slice(0, len - amount);
+  const secondPart = str.slice(len - amount);
 
   // Concatenate the two parts in reverse order to achieve the rotation
-  return secondPart + firstPart;}
+  return secondPart + firstPart;
+}
 
-  console.log(rotateStr(str, rotateAmnt1))
-  console.log('expected: ' + expected1)
-  console.log(rotateStr(str, rotateAmnt2))
-  console.log('expected: ' + expected2)
-  console.log(rotateStr(str, rotateAmnt3))
-  console.log('expected: ' + expected3)
-  console.log(rotateStr(str, rotateAmnt4))
-  console.log('expected: ' + expected4)
-  console.log(rotateStr(str, rotateAmnt5))
-  console.log('expected: ' + expected5)
+console.log(rotateStr(str, rotateAmnt1));
+console.log("expected: " + expected1);
+console.log(rotateStr(str, rotateAmnt2));
+console.log("expected: " + expected2);
+console.log(rotateStr(str, rotateAmnt3));
+console.log("expected: " + expected3);
+console.log(rotateStr(str, rotateAmnt4));
+console.log("expected: " + expected4);
+console.log(rotateStr(str, rotateAmnt5));
+console.log("expected: " + expected5);

@@ -4,6 +4,7 @@
 */
 
 const strA1 = "ABCD";
+AABCDABCD;
 const strB1 = "CDAB";
 // Explanation: if you start from A in the 2nd string, the letters are in the same order, just rotated
 const expected1 = true;
@@ -27,19 +28,17 @@ const expected3 = false;
  * @returns {boolean} Whether the second string is a rotated version of the 1st.
  */
 function isRotation(s1, s2) {
-    if (s1.length !== s2.length) {
-        return false; // If lengths are different, not a rotation | edge case
-      }
-    
-      const doubledS1 = s1 + s1; // Double the first string
-      return doubledS1.includes(s2); // Check if second string is a substring of doubled first string
-    }
-    
+  if (s1.length !== s2.length) {
+    return false; // If lengths are different, not a rotation | edge case
+  }
 
+  const doubledS1 = s1 + s1; // Double the first string
+  return doubledS1.includes(s2); // Check if second string is a substring of doubled first string
+}
 
 console.log(isRotation(strA1, strB1));
-console.log("expected: " + expected1)
+console.log("expected: " + expected1);
 console.log(isRotation(strA2, strB2));
-console.log("expected: " + expected2)
+console.log("expected: " + expected2);
 console.log(isRotation(strA3, strB3));
-console.log("expected: " + expected3)
+console.log("expected: " + expected3);
